@@ -10,6 +10,7 @@ import "./styles.scss";
 const App = () => {
   const [coinData, setCoinData] = useState([]);
 
+
   useEffect(() => {
     axios
       .get(
@@ -18,8 +19,11 @@ const App = () => {
       .then(res => setCoinData(res.data))
       .catch(err => console.log(err));
   }, []);
+
+
+
   return (
-    <div className={darkmode ? "dark-mode App" : "App"}>
+    <div className="App">
       <Navbar />
       <Charts coinData={coinData} />
     </div>
